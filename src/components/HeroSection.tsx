@@ -146,34 +146,17 @@ const HeroSection = ({
         </div>
 
         {/* feedback card */}
-        <div className="rounded-lg shadow-lg w-[420px] h-[172px] bg-white z-20 absolute -bottom-44 flex flex-col gap-y-3 justify-center p-4">
-          <div className="flex flex-row items-center gap-x-3 justify-between">
-            <div className="flex flex-row items-center gap-x-2">
-              <img
-                src={hero_section_feedback_group.feedback_image}
-                className="w-[40px]"
-              />
-              <span className="text-neutral">
-                {hero_section_feedback_group.feedback_name}
-              </span>
-            </div>
-            <div className="flex flex-row items-center gap-x-2">
-              <img
-                src={overall_rating_group.star_rating_image}
-                className="w-[60px]"
-              />
-              <span className="text-neutral text-[12px]">
-                {overall_rating_group.rating_message}
-              </span>
-            </div>
-          </div>
-
-          <p className="text-neutral text-[12px]">
-            {hero_section_feedback_group.feedback_message}
-          </p>
+        <div className="m-auto lg:z-20 lg:absolute lg:-bottom-44 ">
+          <FeedbackCard
+            feedback_image={hero_section_feedback_group.feedback_image}
+            feedback_name={hero_section_feedback_group.feedback_name}
+            feedback_message={hero_section_feedback_group.feedback_message}
+            rating_message={overall_rating_group.rating_message}
+            star_rating_image={overall_rating_group.star_rating_image}
+          />
         </div>
 
-        {/* image */}
+        {/* hero image */}
         <img
           src={hero_image}
           className="aspect-[1.72] object-contain object-center w-[725px
@@ -187,6 +170,12 @@ const HeroSection = ({
     <>
       <div className="w-10/12 m-auto flex flex-col">
         {isMobile ? mobileHero : dekstopHero}
+
+        <div className="relative flex flex-col justify-center items-center top-4 lg:top-28">
+          <p className="text-xl text-neutral tracking-wider">
+            {as_seen_group.as_seen_text}
+          </p>
+        </div>
       </div>
 
       <div className="w-full lg:overflow-hidden">
