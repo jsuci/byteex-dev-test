@@ -189,10 +189,10 @@ const HeroSection = ({
         {isMobile ? mobileHero : dekstopHero}
       </div>
 
-      <div className="w-full overflow-hidden">
+      <div className="w-full lg:overflow-hidden">
         <img
           src={BGSectionImg}
-          className="w-full h-auto block lg:-mt-80 relative -z-40"
+          className="w-full h-auto block -mt-32 lg:-mt-80 relative -z-40"
         />
       </div>
     </>
