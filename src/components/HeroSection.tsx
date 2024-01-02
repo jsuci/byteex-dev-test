@@ -159,8 +159,8 @@ const HeroSection = ({
         {/* hero image */}
         <img
           src={hero_image}
-          className="aspect-[1.72] object-contain object-center w-[725px
-        ] overflow-hidden mt-1 max-md:max-w-full max-md:mt-10"
+          className="aspect-[1.72] object-contain object-center max-w-[725px
+        ] overflow-hidden m-auto mt-1 max-md:max-w-full max-md:mt-10"
         />
       </div>
     </>
