@@ -18,19 +18,23 @@ interface Product {
 
 function ProductPage() {
   const [items, setItems] = useState<Product | null>(null);
+  const [loading, setLoading] = useState(true);
   const url = "https://ifixyourpage.com/byteex/wp-json/wp/v2/products/23";
 
   useEffect(() => {
     axios.get(url).then((res) => {
       setItems(res.data.acf);
+      setLoading(false);
     });
   }, []);
 
-  return (
-    <>
-      <Banner content={items?.banner_message_group} />
-    </>
-  );
+  if (!loading) {
+    return (
+      <>
+        <Banner content={items?.banner_message_group} />
+      </>
+    );
+  }
 }
 
 export default ProductPage;
