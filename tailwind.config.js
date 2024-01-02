@@ -2,6 +2,15 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    fontFamily: {
+      body: ["Sofia Sans", "sans-serif"],
+      sans: ["Sofia Sans", "sans-serif"],
+    },
+    colors: {
+      primary: "#01005B",
+      secondary: "#F9F0E5",
+      neutral: "#676869",
+    },
     extend: {},
   },
   plugins: [],
