@@ -118,7 +118,7 @@ const HeroSection = ({
 
   const dekstopHero = (
     <>
-      <div className="flex flex-row relative items-center mb-[8%]">
+      <div className="flex flex-row relative items-center mb-[6%]">
         {/* text */}
         <div className="w-[592px]">
           <h2 className="font-normal text-start text-primary text-4xl leading-snug">
