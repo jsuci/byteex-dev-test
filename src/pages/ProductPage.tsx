@@ -4,6 +4,7 @@ import axios from "axios";
 import Banner from "../components/Banner";
 import SiteLogo from "../components/SiteLogo";
 import HeroSection from "../components/HeroSection";
+import BenefitsSection from "../components/BenefitsSection";
 
 interface Product {
   banner_message_group: any;
@@ -36,6 +37,7 @@ function ProductPage() {
         <Banner content={items?.banner_message_group} />
         <SiteLogo content={items?.site_logo} />
         <HeroSection content={items?.hero_section} />
+        <BenefitsSection content={items?.benefits_section} />
       </>
     );
   }

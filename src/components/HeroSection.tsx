@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import CallToActionButton from "./ui/CallToActionButton";
-import BGSectionImg from "../assets/bg-section.png";
+import BGSectionImg from "../assets/bg-dark-section.png";
 import FeedbackCard from "./ui/FeedBackCard";
 
 interface HeroSubtitle {
@@ -183,7 +183,7 @@ const HeroSection = ({
       <div className="w-full relative lg:overflow-hidden">
         <img
           src={BGSectionImg}
-          className="w-full h-auto -mt-40 lg:-mt-96 relative -z-40"
+          className="w-full h-[300px] lg:h-[430px] -mt-40 relative -z-40"
         />
 
         {/* as seen in */}
@@ -192,7 +192,7 @@ const HeroSection = ({
             {as_seen_group.as_seen_text}
           </p>
 
-          <div className="flex flex-row justify-evenly w-10/12 items-center mt-3 flex-wrap">
+          <div className="flex flex-row justify-evenly w-10/12 items-center mt-3 gap-x-6 flex-nowrap overflow-scroll lg:overflow-hidden">
             {as_seen_group.partner_image_group &&
               Object.values(as_seen_group.partner_image_group).map(
                 (imagelink, index) => (
