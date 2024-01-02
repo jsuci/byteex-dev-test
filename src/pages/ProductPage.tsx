@@ -1,11 +1,12 @@
-import Banner from "../components/ui/Banner";
+import Banner from "../components/Banner";
 
 import { useEffect, useState } from "react";
 import axios from "axios";
+import SiteLogo from "../components/SiteLogo";
 
 interface Product {
   banner_message_group: any;
-  site_logo: string;
+  site_logo: any;
   hero_section: any;
   benefits_section: any;
   about_section: any;
@@ -30,9 +31,10 @@ function ProductPage() {
 
   if (!loading) {
     return (
-      <>
+      <div className="w-10/12 m-auto flex flex-col">
         <Banner content={items?.banner_message_group} />
-      </>
+        <SiteLogo content={items?.site_logo} />
+      </div>
     );
   }
 }
