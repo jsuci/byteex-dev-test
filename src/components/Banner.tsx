@@ -9,8 +9,8 @@ const Banner = ({
 }: BannerProps) => {
   return (
     <>
-      <div className="bg-banner">
-        <div className="flex flex-row items-center justify-center text-center py-3">
+      <div className="bg-secondary">
+        <div className="flex flex-row items-center justify-center text-center py-2">
           <span className="text-sm lg:hidden">{`${banner_text_2}`}</span>
           <span className="hidden lg:inline-block text-sm">{`${banner_text_1} | ${banner_text_2} | ${banner_text_3}`}</span>
         </div>
