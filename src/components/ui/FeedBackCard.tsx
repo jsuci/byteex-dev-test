@@ -15,7 +15,7 @@ const FeedbackCard = ({
 }: FeedbackCardProps) => {
   return (
     <>
-      <div className="rounded-lg shadow-lg w-[420px] h-[172px] bg-white flex flex-col gap-y-3 justify-center p-4">
+      <div className="rounded-lg shadow-lg max-w-[420px] h-[172px] bg-white flex flex-col gap-y-3 justify-center p-4">
         <div className="flex flex-row items-center gap-x-3 justify-between">
           <div className="flex flex-row items-center gap-x-2">
             <img src={feedback_image} className="w-[40px]" />

@@ -30,13 +30,17 @@ interface CallToActionGroup {
   cta_text: string;
 }
 
-interface AsSeenGroup {
-  as_seen_text: string;
+interface PartnerImageGroup {
   partner_img_1: string;
   partner_img_2: string;
   partner_img_3: string;
   partner_img_4: string;
   partner_img_5: string;
+}
+
+interface AsSeenGroup {
+  as_seen_text: string;
+  partner_image_group: PartnerImageGroup;
 }
 
 interface HeroSectionProps {
@@ -62,7 +66,7 @@ const HeroSection = ({
     as_seen_group,
   },
 }: HeroSectionProps) => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
 
   useEffect(() => {
     const handleResize = () => {
@@ -118,7 +122,7 @@ const HeroSection = ({
 
   const dekstopHero = (
     <>
-      <div className="flex flex-row relative items-center mb-[6%]">
+      <div className="flex flex-row relative items-center">
         {/* text */}
         <div className="w-[592px]">
           <h2 className="font-normal text-start text-primary text-4xl leading-snug">
@@ -143,17 +147,17 @@ const HeroSection = ({
             cta_icon={call_to_action_group.cta_icon}
             cta_text={call_to_action_group.cta_text}
           />
-        </div>
 
-        {/* feedback card */}
-        <div className="m-auto lg:z-20 lg:absolute lg:-bottom-44 ">
-          <FeedbackCard
-            feedback_image={hero_section_feedback_group.feedback_image}
-            feedback_name={hero_section_feedback_group.feedback_name}
-            feedback_message={hero_section_feedback_group.feedback_message}
-            rating_message={overall_rating_group.rating_message}
-            star_rating_image={overall_rating_group.star_rating_image}
-          />
+          {/* feedback card */}
+          <div className="m-auto lg:z-20 lg:absolute lg:-bottom-44 ">
+            <FeedbackCard
+              feedback_image={hero_section_feedback_group.feedback_image}
+              feedback_name={hero_section_feedback_group.feedback_name}
+              feedback_message={hero_section_feedback_group.feedback_message}
+              rating_message={overall_rating_group.rating_message}
+              star_rating_image={overall_rating_group.star_rating_image}
+            />
+          </div>
         </div>
 
         {/* hero image */}
@@ -168,21 +172,31 @@ const HeroSection = ({
 
   return (
     <>
-      <div className="w-10/12 m-auto flex flex-col">
+      <div className="w-10/12 m-auto flex flex-col mb-20">
         {isMobile ? mobileHero : dekstopHero}
+      </div>
 
-        <div className="relative flex flex-col justify-center items-center top-4 lg:top-28">
+      <div className="w-full relative lg:overflow-hidden">
+        <img
+          src={BGSectionImg}
+          className="w-full h-auto -mt-32 lg:-mt-96 relative -z-40"
+        />
+
+        {/* as seen in */}
+        <div className="absolute flex flex-col w-full m-auto justify-center items-center top-28 left-0">
           <p className="text-xl text-neutral tracking-wider">
             {as_seen_group.as_seen_text}
           </p>
-        </div>
-      </div>
 
-      <div className="w-full lg:overflow-hidden">
-        <img
-          src={BGSectionImg}
-          className="w-full h-auto block -mt-32 lg:-mt-80 relative -z-40"
-        />
+          <div className="flex flex-row justify-evenly w-full items-center mt-3 flex-wrap">
+            {as_seen_group.partner_image_group &&
+              Object.values(as_seen_group.partner_image_group).map(
+                (imagelink, index) => (
+                  <img key={index} src={imagelink} className="h-full" />
+                )
+              )}
+          </div>
+        </div>
       </div>
     </>
   );
