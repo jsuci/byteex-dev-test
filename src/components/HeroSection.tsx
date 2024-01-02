@@ -101,10 +101,12 @@ const HeroSection = ({
             )}
         </div>
 
-        <CallToActionButton
-          cta_icon={call_to_action_group.cta_icon}
-          cta_text={call_to_action_group.cta_text}
-        />
+        <div className="w-full">
+          <CallToActionButton
+            cta_icon={call_to_action_group.cta_icon}
+            cta_text={call_to_action_group.cta_text}
+          />
+        </div>
       </div>
 
       {/* feedback card */}
@@ -143,10 +145,12 @@ const HeroSection = ({
               )}
           </div>
 
-          <CallToActionButton
-            cta_icon={call_to_action_group.cta_icon}
-            cta_text={call_to_action_group.cta_text}
-          />
+          <div className="max-w-[362px]">
+            <CallToActionButton
+              cta_icon={call_to_action_group.cta_icon}
+              cta_text={call_to_action_group.cta_text}
+            />
+          </div>
 
           {/* feedback card */}
           <div className="m-auto lg:z-20 lg:absolute lg:-bottom-44 ">
@@ -179,7 +183,7 @@ const HeroSection = ({
       <div className="w-full relative lg:overflow-hidden">
         <img
           src={BGSectionImg}
-          className="w-full h-auto -mt-32 lg:-mt-96 relative -z-40"
+          className="w-full h-auto -mt-40 lg:-mt-96 relative -z-40"
         />
 
         {/* as seen in */}
@@ -188,7 +192,7 @@ const HeroSection = ({
             {as_seen_group.as_seen_text}
           </p>
 
-          <div className="flex flex-row justify-evenly w-full items-center mt-3 flex-wrap">
+          <div className="flex flex-row justify-evenly w-10/12 items-center mt-3 flex-wrap">
             {as_seen_group.partner_image_group &&
               Object.values(as_seen_group.partner_image_group).map(
                 (imagelink, index) => (
