@@ -34,6 +34,18 @@ const ImageSectionSlider = ({ content }: ImageSectionSliderProps) => {
     setCurrentIndex(index);
   };
 
+  const handleArrowClick = (direction: "prev" | "next") => {
+    if (direction === "prev") {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === 0 ? bigImageUrls.length - 1 : prevIndex - 1
+      );
+    } else {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === bigImageUrls.length - 1 ? 0 : prevIndex + 1
+      );
+    }
+  };
+
   return (
     <>
       <div className="relative flex flex-col items-center justify-center mb-[36px] max-w-[280px] sm:max-w-[320px] lg:max-w-[433px] lg:ml-auto">
@@ -52,8 +64,16 @@ const ImageSectionSlider = ({ content }: ImageSectionSliderProps) => {
 
         <p className="text-[16px] text-neutral mt-2">{titles[currentIndex]}</p>
         <div className="flex flex-row w-[130%] lg:w-[120%] justify-between absolute items-center m-auto">
-          <img src={PrevBtnImg} className="max-w-[13px] lg:max-w-[15px] ml-3" />
-          <img src={NextBtnImg} className="max-w-[13px] lg:max-w-[15px] mr-3" />
+          <img
+            src={PrevBtnImg}
+            className="max-w-[13px] lg:max-w-[15px] ml-3 cursor-pointer"
+            onClick={() => handleArrowClick("prev")}
+          />
+          <img
+            src={NextBtnImg}
+            className="max-w-[13px] lg:max-w-[15px] mr-3 cursor-pointer"
+            onClick={() => handleArrowClick("next")}
+          />
         </div>
       </div>
     </>
