@@ -1,6 +1,7 @@
 import ImageSectionSlider from "./ui/ImageSectionSlider";
 import DividerImg from "../assets/divider.png";
 import { useEffect, useState } from "react";
+import CTAWithRating from "./ui/CTAWithRating";
 
 interface BenefitsSectionProps {
   content: {
@@ -65,8 +66,8 @@ const BenefitsSection = ({
 
   return (
     <>
-      <div className="w-10/12 m-auto flex flex-col lg:flex-row lg:justify-between lg:gap-x-7 mt-[30px] 2xl:px-28">
-        <div className="flex flex-col items-center lg:items-start lg:w-[660px] lg:mr-[30px]">
+      <div className="w-10/12 m-auto mb-[30px] flex flex-col lg:flex-row lg:justify-between lg:gap-x-7 mt-[30px] 2xl:px-28">
+        <div className="flex flex-col items-center mb-[40px] lg:mb-0 lg:items-start lg:w-[660px] lg:mr-[30px]">
           <h2 className="text-[30px] lg:text-[32px] text-primary text-center lg:text-left tracking-wider mb-[20px] lg:mb-[85px]">
             {benefits_title}
           </h2>
@@ -93,10 +94,22 @@ const BenefitsSection = ({
                 </p>
               </div>
 
-              <img src={DividerImg} className="mb-[30px] mt-[30px] lg:hidden" />
+              {index < benefitsList.length - 1 && (
+                <img
+                  src={DividerImg}
+                  className="mb-[30px] mt-[30px] lg:hidden"
+                />
+              )}
             </div>
           ))}
         </div>
+
+        {isMobile && (
+          <CTAWithRating
+            btn_text="Customize Your Outfit"
+            rating_message="One of 500+ 5 Star Reviews Online"
+          />
+        )}
 
         {!isMobile && (
           <ImageSectionSlider content={benefits_slide_image_group} />
