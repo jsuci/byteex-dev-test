@@ -70,9 +70,10 @@ const BenefitsSection = ({
           <h2 className="text-[30px] lg:text-[32px] text-primary text-center lg:text-left tracking-wider mb-[20px] lg:mb-[85px]">
             {benefits_title}
           </h2>
-          {isMobile ? (
+
+          {isMobile && (
             <ImageSectionSlider content={benefits_slide_image_group} />
-          ) : null}
+          )}
 
           {benefitsList.map((benefits, index) => (
             <div
@@ -96,9 +97,10 @@ const BenefitsSection = ({
             </div>
           ))}
         </div>
-        {!isMobile ? (
+
+        {!isMobile && (
           <ImageSectionSlider content={benefits_slide_image_group} />
-        ) : null}
+        )}
       </div>
     </>
   );
