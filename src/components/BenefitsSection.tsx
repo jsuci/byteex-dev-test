@@ -64,7 +64,7 @@ const BenefitsSection = ({
 
   return (
     <>
-      <div className="w-10/12 m-auto flex flex-col lg:flex-row lg:justify-between lg:gap-x-7 mt-[30px]">
+      <div className="w-10/12 m-auto flex flex-col lg:flex-row lg:justify-between lg:gap-x-7 mt-[30px] 2xl:px-28">
         <div className="flex flex-col items-center lg:items-start lg:w-[660px] lg:mr-[30px]">
           <h2 className="text-[30px] lg:text-[32px] text-primary text-center lg:text-left tracking-wider mb-[20px] lg:mb-[85px]">
             {benefits_title}

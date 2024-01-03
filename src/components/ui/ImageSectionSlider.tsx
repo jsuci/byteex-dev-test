@@ -15,7 +15,7 @@ interface BigSmallImage {
 }
 
 const ImageSectionSlider = ({
-  content: { benefits_image_1, benefits_image_2, benefits_image_3 },
+  content: { benefits_image_3 },
 }: ImageSectionSliderProps) => {
   return (
     <>
