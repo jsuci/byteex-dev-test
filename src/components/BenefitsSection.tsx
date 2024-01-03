@@ -86,7 +86,7 @@ const BenefitsSection = ({
                 className="w-[42px] h-[42px]"
               />
               <div className="flex flex-col gap-y-4 justify-center items-center lg:items-start">
-                <p className="text-[22px] text-primary">
+                <p className="text-[22px] text-primary text-center">
                   {benefits.benefits_list_title}
                 </p>
                 <p className="text-[15px] text-neutral tracking-wider mx-[40px] text-center lg:text-left lg:mx-0">
