@@ -1,4 +1,4 @@
-import DOMPurify from "dompurify";
+import purify from "dompurify";
 import { useEffect, useState } from "react";
 import CallToActionButton from "./ui/CallToActionButton";
 
@@ -28,7 +28,7 @@ const AboutSection = ({
 }: AboutSectionProps) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
 
-  const sanitizedHtml = DOMPurify.sanitize(about_section_content);
+  const sanitizedHtml = purify.sanitize(about_section_content);
 
   useEffect(() => {
     const handleResize = () => {
