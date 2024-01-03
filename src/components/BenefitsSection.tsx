@@ -28,6 +28,7 @@ interface BenefitsImageGroup {
 interface BigSmallImage {
   benefits_big_image: string;
   benefits_small_image: string;
+  benefit_title: string;
 }
 
 const BenefitsSection = ({
