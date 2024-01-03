@@ -5,6 +5,7 @@ import Banner from "../components/Banner";
 import SiteLogo from "../components/SiteLogo";
 import HeroSection from "../components/HeroSection";
 import BenefitsSection from "../components/BenefitsSection";
+import AboutSection from "../components/AboutSection";
 
 interface Product {
   banner_message_group: any;
@@ -38,6 +39,7 @@ function ProductPage() {
         <SiteLogo content={items?.site_logo} />
         <HeroSection content={items?.hero_section} />
         <BenefitsSection content={items?.benefits_section} />
+        <AboutSection content={items?.about_section} />
       </>
     );
   }
