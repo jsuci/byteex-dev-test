@@ -126,7 +126,7 @@ const HeroSection = ({
     <>
       <div className="flex flex-row relative items-center">
         {/* text */}
-        <div className="w-[592px]">
+        <div className="w-[592px] m-auto">
           <h2 className="font-normal text-start text-primary text-4xl leading-snug">
             {hero_section_title}
           </h2>

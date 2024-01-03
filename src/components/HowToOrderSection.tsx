@@ -88,7 +88,7 @@ const HowToOrderSection = ({
             </div>
           ))}
 
-        {isMobile && <HowToOrderSectionSlider content={items[0]} />}
+        {isMobile && <HowToOrderSectionSlider content={items} />}
 
         {isMobile && (
           <div className="w-full max-w-[400px]">
