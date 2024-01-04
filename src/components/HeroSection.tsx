@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import CallToActionButton from "./ui/CallToActionButton";
-import BGSectionImg from "../assets/bg-section.png";
+import BGSectionImg from "../assets/bg-dark-section.png";
 import FeedbackCard from "./ui/FeedBackCard";
 
 interface HeroSubtitle {
@@ -110,7 +110,7 @@ const HeroSection = ({
       </div>
 
       {/* feedback card */}
-      <div className="m-auto lg:z-20 lg:absolute lg:-bottom-44 ">
+      <div className="mt-[30px]">
         <FeedbackCard
           feedback_image={hero_section_feedback_group.feedback_image}
           feedback_name={hero_section_feedback_group.feedback_name}
@@ -145,7 +145,7 @@ const HeroSection = ({
               )}
           </div>
 
-          <div className="max-w-[362px]">
+          <div className="max-w-[362px] mb-[30px]">
             <CallToActionButton
               cta_icon={call_to_action_group.cta_icon}
               cta_text={call_to_action_group.cta_text}
@@ -153,7 +153,7 @@ const HeroSection = ({
           </div>
 
           {/* feedback card */}
-          <div className="m-auto lg:z-20 lg:absolute lg:-bottom-44 ">
+          <div className="max-w-[450px] h-[190px] -mb-[160px]">
             <FeedbackCard
               feedback_image={hero_section_feedback_group.feedback_image}
               feedback_name={hero_section_feedback_group.feedback_name}
