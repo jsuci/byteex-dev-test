@@ -50,7 +50,7 @@ const AboutSection = ({
         {!isMobile && <img src={about_section_image} />}
 
         <div className="flex flex-col items-center gap-y-12 lg:gap-y-8 lg:items-start">
-          <h2 className="text-primary text-[28px] tracking-wide">
+          <h2 className="text-primary text-[28px] tracking-wide text-center">
             {about_section_title}
           </h2>
           {isMobile && <img src={about_section_image} />}

@@ -63,7 +63,7 @@ const ImageSectionSlider = ({ content }: ImageSectionSliderProps) => {
         </div>
 
         <p className="text-[16px] text-neutral mt-2">{titles[currentIndex]}</p>
-        <div className="flex flex-row w-[130%] lg:w-[120%] justify-between absolute items-center m-auto">
+        <div className="flex flex-row w-[128%] lg:w-[120%] justify-between absolute items-center m-auto">
           <img
             src={PrevBtnImg}
             className="max-w-[13px] lg:max-w-[15px] ml-3 cursor-pointer"
