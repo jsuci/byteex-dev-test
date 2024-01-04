@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import CallToActionButton from "./ui/CallToActionButton";
-import BGSectionImg from "../assets/bg-dark-section.png";
+import BGSectionImg from "../assets/bg-section.png";
 import FeedbackCard from "./ui/FeedBackCard";
 
 interface HeroSubtitle {
