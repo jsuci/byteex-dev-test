@@ -21,12 +21,13 @@ const ReviewSection = ({
     review_section_title,
     review_section_subtitle,
     review_section_image,
-    feedback_groups,
   },
 }: ReviewSectionProps) => {
   const images: string[] = Object.values(review_section_image);
+  const half: number = Math.ceil(images.length / 2);
+
   return (
-    <div className="flex flex-col items-center gap-y-7 mb-[60px]">
+    <div className="flex flex-col w-full items-center gap-y-7 mb-[60px]">
       <h2 className="text-primary text-[26px] tracking-wider text-center mx-[30px]">
         {review_section_title}
       </h2>
@@ -35,12 +36,12 @@ const ReviewSection = ({
       </p>
       <div className="flex flex-col">
         <div className="flex flex-row overflow-auto items-center justify-center">
-          {images.slice(0, 11).map((imgGroup, index) => (
+          {images.slice(0, half).map((imgGroup, index) => (
             <img src={imgGroup} key={index} />
           ))}
         </div>
-        <div className="flex flex-row overflow-auto items-center justify-center">
-          {images.slice(11, 22).map((imgGroup, index) => (
+        <div className="flex flex-row w-full jus overflow-auto items-center justify-center">
+          {images.slice(half, images.length).map((imgGroup, index) => (
             <img src={imgGroup} key={index} />
           ))}
         </div>
