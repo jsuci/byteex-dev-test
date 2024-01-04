@@ -116,37 +116,45 @@ const FeedbackCardSlider = ({
   );
 
   const desktopFeedbackSlider = (
-    <div className="flex flex-col relative w-10/12">
-      <div className="relative items-start gap-x-12 justify-center flex flex-row mx-[60px]">
-        {content
-          .slice(startIndex, startIndex + visibleThumbnails)
-          .map((item, index) => (
-            <div className="flex flex-col w-[550px]">
-              <FeedbackCard
-                feedback_image={item.feedback_image}
-                feedback_name={item.feedback_name}
-                feedback_message={item.feedback_message}
-                star_rating_image={item.feedback_rating}
-                is_section={true}
-                key={index}
-              />
-            </div>
-          ))}
-      </div>
+    <>
+      <div className="flex flex-col relative w-10/12">
+        <div className="relative items-start gap-x-12 justify-center flex flex-row mx-[60px]">
+          {content
+            .slice(startIndex, startIndex + visibleThumbnails)
+            .map((item, index) => (
+              <div className="flex flex-col w-[550px]">
+                <FeedbackCard
+                  feedback_image={item.feedback_image}
+                  feedback_name={item.feedback_name}
+                  feedback_message={item.feedback_message}
+                  star_rating_image={item.feedback_rating}
+                  is_section={true}
+                  key={index}
+                />
+              </div>
+            ))}
+        </div>
 
-      <div className="flex flex-row items-center justify-between m-auto absolute w-[100%] top-[90px]">
-        <img
-          src={PrevBtnImg}
-          className="max-w-[13px] lg:max-w-[20px] ml-3 cursor-pointer"
-          onClick={() => handleArrowClickDesktop("prev")}
-        />
-        <img
-          src={NextBtnImg}
-          className="max-w-[13px] lg:max-w-[20px] mr-3 cursor-pointer"
-          onClick={() => handleArrowClickDesktop("next")}
+        <div className="flex flex-row items-center justify-between m-auto absolute w-[100%] top-[90px]">
+          <img
+            src={PrevBtnImg}
+            className="max-w-[13px] lg:max-w-[20px] ml-3 cursor-pointer"
+            onClick={() => handleArrowClickDesktop("prev")}
+          />
+          <img
+            src={NextBtnImg}
+            className="max-w-[13px] lg:max-w-[20px] mr-3 cursor-pointer"
+            onClick={() => handleArrowClickDesktop("next")}
+          />
+        </div>
+      </div>
+      <div className="flex flex-col w-[400px]">
+        <CTAWithRating
+          btn_text="Customize Your Outfit"
+          rating_message="Over 500+ 5 Star Reviews Online"
         />
       </div>
-    </div>
+    </>
   );
 
   return isMobile ? mobileFeedbackSlider : desktopFeedbackSlider;
