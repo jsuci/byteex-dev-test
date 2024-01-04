@@ -1,4 +1,3 @@
-import FeedbackCard from "./ui/FeedBackCard";
 import FeedbackCardSlider from "./ui/FeedbackCardSlider";
 
 interface FeedbackGroup {

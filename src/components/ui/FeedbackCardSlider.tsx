@@ -31,7 +31,7 @@ const FeedbackCardSlider = ({ content }: FeedbackCardSliderProps) => {
 
   const item: FeedbackGroup = content[currentIndex];
 
-  return (
+  const mobileFeedbackSlider = (
     <div className="relative items-center justify-center flex flex-col mx-[30px] max-w-[350px]">
       <FeedbackCard
         feedback_image={item.feedback_image}
@@ -55,6 +55,8 @@ const FeedbackCardSlider = ({ content }: FeedbackCardSliderProps) => {
       </div>
     </div>
   );
+
+  return mobileFeedbackSlider;
 };
 
 export default FeedbackCardSlider;
