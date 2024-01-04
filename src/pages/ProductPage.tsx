@@ -8,6 +8,7 @@ import BenefitsSection from "../components/BenefitsSection";
 import AboutSection from "../components/AboutSection";
 import HowToOrderSection from "../components/HowToOrderSection";
 import ReviewSection from "../components/ReviewSection";
+import FAQSection from "../components/FAQSection";
 
 interface Product {
   banner_message_group: any;
@@ -44,6 +45,7 @@ function ProductPage() {
         <AboutSection content={items?.about_section} />
         <HowToOrderSection content={items?.how_to_order_section} />
         <ReviewSection content={items?.review_section} />
+        <FAQSection content={items?.faq_section} />
       </>
     );
   }
