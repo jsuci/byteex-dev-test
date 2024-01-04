@@ -41,11 +41,13 @@ const FeedbackCardSlider = ({
   const handleArrowClickDesktop = (direction: "prev" | "next") => {
     if (direction === "prev") {
       setStartIndex((prevIndex) =>
-        prevIndex === 0 ? content.length - 1 : prevIndex - 1
+        prevIndex === 0 ? content.length - visibleThumbnails : prevIndex - 1
       );
     } else {
       setStartIndex((prevIndex) =>
-        prevIndex === content.length - visibleThumbnails ? 0 : prevIndex + 1
+        prevIndex === content.length - visibleThumbnails
+          ? 0
+          : Math.min(content.length - visibleThumbnails, prevIndex + 1)
       );
     }
   };
