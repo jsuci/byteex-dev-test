@@ -40,7 +40,7 @@ const InfoBannerSection = ({
   }, []);
 
   const mobileBanner = (
-    <div className="bg-[#F0EEEF] w-full mt-[30px] p-[30px]">
+    <div className="bg-[#F0EEEF] w-full mt-[30px] px-[30px] py-[60px]">
       <div className=" flex flex-col items-center justify-center m-auto gap-y-6">
         <h2 className="text-primary text-[30px] tracking-wider mb-[30px] text-center">
           {info_banner_title}
@@ -55,7 +55,10 @@ const InfoBannerSection = ({
             <p className="text-[13px] tracking-wide text-primary font-medium">
               {items.info_subtitle}
             </p>
-            <img src={DividerImg} className="mt-[10px]" />
+
+            {index < bannerItems.length - 1 && (
+              <img src={DividerImg} className="mt-[10px]" />
+            )}
           </div>
         ))}
       </div>
@@ -70,7 +73,10 @@ const InfoBannerSection = ({
         </h2>
         <div className="flex flex-row items-center justify-center">
           {bannerItems.map((items, index) => (
-            <div className="flex flex-row gap-x-6 items-center justify-center">
+            <div
+              className="flex flex-row gap-x-6 items-center justify-center"
+              key={index}
+            >
               <div
                 className="flex flex-col gap-y-3 items-center justify-center ml-[20px]"
                 key={index}

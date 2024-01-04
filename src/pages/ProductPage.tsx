@@ -10,6 +10,7 @@ import HowToOrderSection from "../components/HowToOrderSection";
 import ReviewSection from "../components/ReviewSection";
 import FAQSection from "../components/FAQSection";
 import InfoBannerSection from "../components/InfoBannerSection";
+import FinalCTASection from "../components/FinalCTASection";
 
 interface Product {
   banner_message_group: any;
@@ -48,6 +49,7 @@ function ProductPage() {
         <ReviewSection content={items?.review_section} />
         <FAQSection content={items?.faq_section} />
         <InfoBannerSection content={items?.info_banner_section} />
+        <FinalCTASection content={items?.final_cta_section} />
       </>
     );
   }
