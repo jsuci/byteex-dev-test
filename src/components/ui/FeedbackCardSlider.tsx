@@ -124,14 +124,13 @@ const FeedbackCardSlider = ({
           {content
             .slice(startIndex, startIndex + visibleThumbnails)
             .map((item, index) => (
-              <div className="flex flex-col w-[550px]">
+              <div className="flex flex-col w-[550px]" key={index}>
                 <FeedbackCard
                   feedback_image={item.feedback_image}
                   feedback_name={item.feedback_name}
                   feedback_message={item.feedback_message}
                   star_rating_image={item.feedback_rating}
                   is_section={true}
-                  key={index}
                 />
               </div>
             ))}
