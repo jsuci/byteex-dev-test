@@ -1,10 +1,10 @@
 # Byteex Product Page Development Test
 
-## Live demo here
+### Live Demo
 
 [https://jsuci.github.io/byteex-dev-test](https://jsuci.github.io/byteex-dev-test)
 
-## Technologies Used
+### Build With
 
 1. Headless Wordpress
 2. ReactJS v18
