@@ -4,43 +4,20 @@ import CallToActionButton from "./ui/CallToActionButton";
 import ArrowImg from "../assets/arrow.png";
 import DividerVertical from "../assets/divider-vertical.png";
 import BgBottomImg from "../assets/bg-bottom.png";
-
-interface FinalCTABenefit {
-  final_cta_benefit_icon: string;
-  final_cta_benefit_text: string;
-}
-
-interface FinalCTASectionContent {
-  final_cta_title: string;
-  final_cta_subtitle: string;
-  final_cta_subtitle_2: string;
-  final_cta_image: string;
-  final_cta_payment_image: string;
-  final_cta_benefits_group: {
-    final_cta_benefit_1: FinalCTABenefit;
-    final_cta_benefit_2: FinalCTABenefit;
-    final_cta_benefit_3: FinalCTABenefit;
-  };
-}
-
-interface FinalCTASectionProps {
-  content: FinalCTASectionContent;
-}
+import type { FinalCTASection, FinalCTABenefit } from "../types";
 
 const FinalCTASection = ({
-  content: {
-    final_cta_title,
-    final_cta_subtitle,
-    final_cta_subtitle_2,
-    final_cta_image,
-    final_cta_payment_image,
-    final_cta_benefits_group: {
-      final_cta_benefit_1,
-      final_cta_benefit_2,
-      final_cta_benefit_3,
-    },
+  final_cta_title,
+  final_cta_subtitle,
+  final_cta_subtitle_2,
+  final_cta_image,
+  final_cta_payment_image,
+  final_cta_benefits_group: {
+    final_cta_benefit_1,
+    final_cta_benefit_2,
+    final_cta_benefit_3,
   },
-}: FinalCTASectionProps) => {
+}: FinalCTASection) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
   const benefitItems: FinalCTABenefit[] = [
     final_cta_benefit_1,

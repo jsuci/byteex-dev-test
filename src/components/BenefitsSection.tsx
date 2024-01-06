@@ -2,6 +2,7 @@ import ImageSectionSlider from "./ui/ImageSectionSlider";
 import DividerImg from "../assets/divider.png";
 import { useEffect, useState } from "react";
 import CTAWithRating from "./ui/CTAWithRating";
+import type { BenefitsSection } from "../types";
 
 interface BenefitsSectionProps {
   content: {
@@ -33,15 +34,13 @@ interface BigSmallImage {
 }
 
 const BenefitsSection = ({
-  content: {
-    benefits_title,
-    benefits_list_1,
-    benefits_list_2,
-    benefits_list_3,
-    benefits_list_4,
-    benefits_slide_image_group,
-  },
-}: BenefitsSectionProps) => {
+  benefits_title,
+  benefits_list_1,
+  benefits_list_2,
+  benefits_list_3,
+  benefits_list_4,
+  benefits_slide_image_group,
+}: BenefitsSection) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
   const benefitsList: BenefitsList[] = [
     benefits_list_1,

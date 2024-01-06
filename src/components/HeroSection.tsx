@@ -2,70 +2,17 @@ import { useEffect, useState } from "react";
 import CallToActionButton from "./ui/CallToActionButton";
 import BGSectionImg from "../assets/bg-section.png";
 import FeedbackCard from "./ui/FeedBackCard";
-
-interface HeroSubtitle {
-  hero_subtitle_text: string;
-  hero_subtitle_icon: string;
-}
-
-interface HeroSubtitleGroup {
-  hero_subtitle_1: HeroSubtitle;
-  hero_subtitle_2: HeroSubtitle;
-  hero_subtitle_3: HeroSubtitle;
-}
-
-interface HeroFeedbackGroup {
-  feedback_image: string;
-  feedback_name: string;
-  feedback_message: string;
-}
-
-interface OverallRatingGroup {
-  star_rating_image: string;
-  rating_message: string;
-}
-
-interface CallToActionGroup {
-  cta_icon: string;
-  cta_text: string;
-}
-
-interface PartnerImageGroup {
-  partner_img_1: string;
-  partner_img_2: string;
-  partner_img_3: string;
-  partner_img_4: string;
-  partner_img_5: string;
-}
-
-interface AsSeenGroup {
-  as_seen_text: string;
-  partner_image_group: PartnerImageGroup;
-}
-
-interface HeroSectionProps {
-  content: {
-    hero_section_title: string;
-    hero_section_subtitle_group: HeroSubtitleGroup;
-    hero_image: string;
-    hero_section_feedback_group: HeroFeedbackGroup;
-    overall_rating_group: OverallRatingGroup;
-    call_to_action_group: CallToActionGroup;
-    as_seen_group: AsSeenGroup;
-  };
-}
+import type { HeroSection } from "../types";
 
 const HeroSection = ({
-  content: {
-    hero_section_title,
-    hero_section_subtitle_group,
-    hero_image,
-    hero_section_feedback_group,
-    overall_rating_group,
-    call_to_action_group,
-    as_seen_group,
-  },
-}: HeroSectionProps) => {
+  hero_section_title,
+  hero_section_subtitle_group,
+  hero_image,
+  call_to_action_group,
+  hero_section_feedback_group,
+  overall_rating_group,
+  as_seen_group,
+}: HeroSection) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
 
   useEffect(() => {

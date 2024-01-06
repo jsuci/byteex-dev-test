@@ -1,31 +1,12 @@
 import FeedbackCardSlider from "./ui/FeedbackCardSlider";
-
-interface FeedbackGroup {
-  feedback_image: string;
-  feedback_name: string;
-  feedback_message: string;
-  feedback_rating: string;
-}
-
-interface ReviewSectionData {
-  review_section_title: string;
-  review_section_subtitle: string;
-  review_section_image: string[];
-  feedback_groups: FeedbackGroup[];
-}
-
-interface ReviewSectionProps {
-  content: ReviewSectionData;
-}
+import type { ReviewSection, FeedbackGroup } from "../types";
 
 const ReviewSection = ({
-  content: {
-    review_section_title,
-    review_section_subtitle,
-    review_section_image,
-    feedback_groups,
-  },
-}: ReviewSectionProps) => {
+  review_section_title,
+  review_section_subtitle,
+  review_section_image,
+  feedback_groups,
+}: ReviewSection) => {
   const images: string[] = Object.values(review_section_image);
   const half: number = Math.ceil(images.length / 2);
 

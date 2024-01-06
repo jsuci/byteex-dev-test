@@ -1,31 +1,14 @@
 import purify from "dompurify";
 import { useEffect, useState } from "react";
 import CallToActionButton from "./ui/CallToActionButton";
-
-interface CallToActionGroup {
-  cta_icon: string;
-  cta_text: string;
-}
-
-interface AboutSectionData {
-  call_to_action_group: CallToActionGroup;
-  about_section_title: string;
-  about_section_content: string;
-  about_section_image: string;
-}
-
-interface AboutSectionProps {
-  content: AboutSectionData;
-}
+import type { AboutSection } from "../types";
 
 const AboutSection = ({
-  content: {
-    call_to_action_group,
-    about_section_title,
-    about_section_content,
-    about_section_image,
-  },
-}: AboutSectionProps) => {
+  call_to_action_group,
+  about_section_title,
+  about_section_content,
+  about_section_image,
+}: AboutSection) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
 
   const sanitizedHtml = purify.sanitize(about_section_content);

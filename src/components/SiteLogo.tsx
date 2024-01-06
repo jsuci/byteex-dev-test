@@ -1,6 +1,6 @@
-interface SiteLogoProps {
+type SiteLogoProps = {
   content: string;
-}
+};
 
 const SiteLogo = ({ content }: SiteLogoProps) => {
   return (

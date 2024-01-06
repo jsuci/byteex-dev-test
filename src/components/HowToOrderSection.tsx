@@ -2,46 +2,16 @@ import CTAWithRating from "./ui/CTAWithRating";
 
 import { useEffect, useState } from "react";
 import HowToOrderSectionSlider from "./ui/HowToOrderSectionSlider";
-
-interface HowToOrderStep {
-  how_to_order_image: string;
-  how_to_order_title: string;
-  how_to_order_content: string;
-}
-
-interface CallToActionGroup {
-  cta_icon: boolean;
-  cta_text: string;
-}
-
-interface OverallRatingGroup {
-  star_rating_image: string;
-  rating_message: string;
-}
-
-interface HowToOrderSectionData {
-  how_to_order_title: string;
-  how_to_order_step_1: HowToOrderStep;
-  how_to_order_step_2: HowToOrderStep;
-  how_to_order_step_3: HowToOrderStep;
-  call_to_action_group: CallToActionGroup;
-  overall_rating_group: OverallRatingGroup;
-}
-
-interface HowToOrderSectionProps {
-  content: HowToOrderSectionData;
-}
+import type { HowToOrderSection, HowToOrderStep } from "../types";
 
 const HowToOrderSection = ({
-  content: {
-    how_to_order_title,
-    how_to_order_step_1,
-    how_to_order_step_2,
-    how_to_order_step_3,
-    call_to_action_group,
-    overall_rating_group,
-  },
-}: HowToOrderSectionProps) => {
+  how_to_order_title,
+  how_to_order_step_1,
+  how_to_order_step_2,
+  how_to_order_step_3,
+  call_to_action_group,
+  overall_rating_group,
+}: HowToOrderSection) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
   const items: HowToOrderStep[] = [
     how_to_order_step_1,

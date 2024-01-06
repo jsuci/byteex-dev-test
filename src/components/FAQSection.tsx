@@ -3,39 +3,18 @@ import PlusImg from "../assets/plus.png";
 import MinusImg from "../assets/minus.png";
 import { useEffect, useState } from "react";
 import CTAWithRating from "./ui/CTAWithRating";
-
-interface FAQQuestion {
-  faq_question_title: string;
-  faq_question_content: string;
-}
-
-interface FAQSectionContent {
-  faq_title: string;
-  faq_question_1: FAQQuestion;
-  faq_question_2: FAQQuestion;
-  faq_question_3: FAQQuestion;
-  faq_question_4: FAQQuestion;
-  faq_question_5: FAQQuestion;
-  faq_question_6: FAQQuestion;
-  faq_image: string;
-}
-
-interface FAQSectionProps {
-  content: FAQSectionContent;
-}
+import type { FAQSection, FAQQuestion } from "../types";
 
 const FAQSection = ({
-  content: {
-    faq_title,
-    faq_question_1,
-    faq_question_2,
-    faq_question_3,
-    faq_question_4,
-    faq_question_5,
-    faq_question_6,
-    faq_image,
-  },
-}: FAQSectionProps) => {
+  faq_title,
+  faq_question_1,
+  faq_question_2,
+  faq_question_3,
+  faq_question_4,
+  faq_question_5,
+  faq_question_6,
+  faq_image,
+}: FAQSection) => {
   const faqItems: FAQQuestion[] = [
     faq_question_1,
     faq_question_2,

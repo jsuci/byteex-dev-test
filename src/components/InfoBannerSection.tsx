@@ -1,27 +1,14 @@
 import { useEffect, useState } from "react";
 import DividerImg from "../assets/divider.png";
 import DividerVerticalImg from "../assets/divider-vertical.png";
-
-interface InfoItem {
-  info_icon: string;
-  info_title: string;
-  info_subtitle: string;
-}
-
-interface InfoBannerSectionContent {
-  info_banner_title: string;
-  info_1: InfoItem;
-  info_2: InfoItem;
-  info_3: InfoItem;
-}
-
-interface InfoBannerSectionProps {
-  content: InfoBannerSectionContent;
-}
+import type { InfoBannerSection, InfoItem } from "../types";
 
 const InfoBannerSection = ({
-  content: { info_banner_title, info_1, info_2, info_3 },
-}: InfoBannerSectionProps) => {
+  info_banner_title,
+  info_1,
+  info_2,
+  info_3,
+}: InfoBannerSection) => {
   const bannerItems: InfoItem[] = [info_1, info_2, info_3];
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
 
